@@ -7,6 +7,10 @@ connectDB();
 const app = express()
 const port = 3000
 
+// to use res.body
+app.use(express.json())
+
+//Available routes
 app.use('/api/auth', require('./routers/auth'))
 app.use('/api/notes', require('./routers/notes'))
 
