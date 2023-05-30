@@ -10,5 +10,7 @@ npm i -D nodemon
 
 nodemone index.js
 
+npm i --save express-validator
+
 create models = schema
 create routes
