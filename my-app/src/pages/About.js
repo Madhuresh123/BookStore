@@ -6,7 +6,7 @@ function About() {
     const a = useContext(noteContext)
 
   return (
-    <div>About hello {a.name} my age is {a.Age}</div>
+    <div>About hello {a.name} my age is {a.Age} </div>
   )
 }
 
