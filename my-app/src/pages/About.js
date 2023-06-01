@@ -1,12 +1,31 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import noteContext from '../context/NoteContext'
 
 function About() {
 
-    const a = useContext(noteContext)
+    const context = useContext(noteContext)
+    const {note, getNotes, deleteNote} = context
+
+    useEffect(() => {
+      getNotes()
+      // eslint-disable-next-line
+
+  },[])
 
   return (
-    <div>About hello {a.name} my age is {a.Age} </div>
+    <>
+    {note.map(element => {
+      return (
+        <div key = {element.title}> 
+        <h2>{element.title} and {element.description}</h2>
+        <button type='button' style={{ margin: "5px" }} >edit</button>
+        <button type='button' onClick={ () => deleteNote(element._id)  }>delete </button>        
+        </div>
+      )
+    }
+    
+    )}
+    </>
   )
 }
 
