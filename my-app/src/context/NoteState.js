@@ -5,6 +5,10 @@ const NoteState = (props) => {
 
     const host = "http://localhost:5000/"
     const [note, setNote] = useState([])
+    const [title, setTitle] = useState('')
+    const [isEdit, setIsEdit] = useState(false)
+
+
 
 
     const getNotes = async () => {
@@ -23,6 +27,26 @@ const NoteState = (props) => {
         }
       };
 
+      //edit a note
+      const editNode = async (id) => {
+
+        await fetch(`${host}api/notes/updatenote/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+              }
+        })
+        const updateNote = note.map((element) => {
+            if (element._id === id) {
+              return { ...element, title: title };
+            }
+            return element;
+          });
+
+            setNote(updateNote)
+            setIsEdit(false)
+      }
+
        // Delete a Note
   const deleteNote = async (id) => {
     // API Call
@@ -39,7 +63,7 @@ const NoteState = (props) => {
 
 
     return (
-        <NoteContext.Provider value= {{ note, getNotes, deleteNote }}>
+        <NoteContext.Provider value= {{ note, getNotes, deleteNote, editNode, setTitle, title, setIsEdit, isEdit }}>
             {props.children}
         </NoteContext.Provider>
     )

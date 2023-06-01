@@ -21,6 +21,24 @@ router.post('/', (req,res) => {
     }).then( note => res.json(note)).catch(error => console.log(error))
     
 })
+
+// update note data by their id
+router.patch('/updatenote/:id', async (req, res) => {
+    try{
+
+        let note = await Notes.findById(req.params.id)
+        if(!note) {return res.status(404).send('Not found')}
+
+        note = await Notes.findByIdAndUpdate(req.params.id, req.body, {new:true })
+        res.json({'Success' : "Note has been updated", note: note})
+
+
+    }
+    catch (error){
+        console.error(error.message)
+        res.status(500).send('Internal Server Error')
+    }
+})
  
 
 // ROUTE 4: Delete an existing Note using: DELETE "/api/notes/deletenote". Login required
