@@ -1,0 +1,64 @@
+.ratings-container {
+    width: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    transition: height 0.3s ease, z-index 0.3s ease;
+
+  }
+  
+  .ratings-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  .ratings-title {
+    font-weight: bold;
+  }
+  
+  .arrow {
+    font-size: 18px;
+  }
+  
+  .ratings-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  .checkbox-label {
+    margin-left: 5px;
+  }
+  
+  .ratings-list li {
+    margin-bottom: 5px;
+    display: none;
+  }
+  
+  .ratings-list.show li {
+    display: block;
+  }
+
+  .ratings-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .ratings-list.show {
+    max-height: 500px; /* Adjust the maximum height based on your content */
+    transition: max-height 0.3s ease;
+  }
+  
+  .arrow {
+    transition: transform 0.3s ease;
+  }
+  
+  .arrow.open {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+  
+  

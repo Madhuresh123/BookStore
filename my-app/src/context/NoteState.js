@@ -5,7 +5,7 @@ const NoteState = (props) => {
 
     const host = "http://localhost:5000/"
     const [note, setNote] = useState([])
-    const [title, setTitle] = useState('')
+    const [title, setTitle] = useState()
     const [isEdit, setIsEdit] = useState(false)
 
 

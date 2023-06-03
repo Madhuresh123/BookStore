@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 6rem;
+  background-color: skyblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header_left{
+  flex: 6;
+  margin-left: 2rem;
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header_right{
+  flex: 4;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header_items{
+  font-size: 20px;
+  font-weight: bolder;
+  color: black !important;
+  text-decoration: none;
+}
+
+.card-section{
+  flex: 8;
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+.card{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  width: 16rem;
+  height: 40vh;
+  border: 2px solid whitesmoke;
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem;
+  transition: height 0.3s ease, z-index 0.3s ease;
+  z-index: 1;
+  position: relative;
+
 }
 
-.App-link {
-  color: #61dafb;
+.card:hover{
+  box-shadow: 8px 8px 16px 8px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ } 
+
+
+
+.card> img{
+  margin: 10px 0;
+  width: 15rem;
+  height: 30vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-content{
+  display: flex;
+  justify-content: space-between;
+  margin: 1px;
+}
+
+.home-body{
+  display: flex;
+  background-color:whitesmoke;
+}
+.filter-section{
+  flex: 2;
+  width: 20rem;
+  height: 40rem;
+  margin: 1rem 10px;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div.filter-section {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.category > p{
+  cursor: pointer;
+}
+
+.category > p:hover{
+  color: rgb(137, 136, 136);
 }

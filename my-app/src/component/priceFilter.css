@@ -1,0 +1,32 @@
+.price-filter {
+    width: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: white;
+  }
+  
+  .price-header {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .price-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .price-label {
+    width: 100px;
+  }
+  
+  .price-slider {
+    flex-grow: 1;
+    margin: 0 10px;
+  }
+  
+  .price-value {
+    width: 50px;
+    text-align: center;
+  }
+  
