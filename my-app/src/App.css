@@ -13,10 +13,20 @@
 
 .header_left{
   flex: 5;
-  margin-left: 2rem;
-  font-size: 2rem;
-  color: black;
-  font-weight: bold;
+ display: flex;
+ justify-content: space-evenly;
+ align-items: center;
+ margin-left: 10rem;
+}
+
+.header_left > input {
+  width: 20rem;
+  height: 2rem;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 5px;
 }
 
 .header_right{
@@ -25,11 +35,19 @@
   justify-content: space-evenly;
 }
 
-.header_items{
-  font-size: 20px;
-  font-weight: bolder;
-  color: black !important;
+.header_left > a{
+  color: white;
   text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+
+}
+
+.header_items > a{
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .card-section{

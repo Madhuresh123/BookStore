@@ -1,0 +1,106 @@
+.detail-section{
+    display: flex;
+    width: auto;
+    height: 100vh;
+    margin: 0 3rem;
+}
+
+.left-section{
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: 100vh;
+    border: 1px solid whitesmoke;
+    background-color: whitesmoke;
+}
+
+.left-section > img {
+    width: 30vw;
+    height: 40vh;
+    margin-top: 3rem;
+    cursor: pointer;
+
+}
+
+.right-section{
+    flex: 5;
+}
+
+.detail-button > button {
+    width: 15rem;
+    height: 3rem;
+    margin: 2rem 0.5rem;
+    border: 1px solid whitesmoke;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 400;
+    margin: 1rem 2rem;
+
+}
+
+.rate-sticker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 1.5rem;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.rating-and-reviews{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    width: 40%;
+    margin-left: 1rem;
+}
+
+.rating-and-reviews > p{
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(155, 155, 155);
+
+}
+
+.offers{
+    padding: 2rem;
+}
+
+.offers > p{
+    margin: 10px 0;
+}
+
+.price{
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.price > h2{
+    font-size: 16px;
+    color: green;
+}
+.cost{
+    display: flex;
+    align-items: baseline;
+}
+
+.cost > p{
+    margin-right:10px;
+}
+
+.specifications{
+    margin-left: 2rem; 
+    border: 1px solid rgb(189, 189, 189);
+    padding: 1rem;
+}
