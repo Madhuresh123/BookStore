@@ -11,7 +11,7 @@ function About() {
       getNotes()
       // eslint-disable-next-line
 
-  },[])
+  },[getNotes])
 
   const handleEdit = (id) => {
     setIsEdit(true)

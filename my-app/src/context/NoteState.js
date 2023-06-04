@@ -8,9 +8,6 @@ const NoteState = (props) => {
     const [title, setTitle] = useState()
     const [isEdit, setIsEdit] = useState(false)
 
-
-
-
     const getNotes = async () => {
         try {
           const response = await fetch(`${host}api/notes`, 
