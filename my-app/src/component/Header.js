@@ -8,8 +8,8 @@ function Header() {
     <div className='header'>
       <div className='header_left'>
         <Link to='/' style={{color: 'white'}}>myBookStore</Link>
-      <input type='text' placeholder='Search for books' />
-      <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: 'blue', marginLeft:'-9rem', fontSize:'20px'} } />
+      <input type='text' placeholder='Search for books by name' />
+      <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: 'blue', marginLeft:'-7rem', fontSize:'20px'} } />
       </div>
       <div className='header_right'>
           <div  className='header_items'><Link>Login</Link></div>

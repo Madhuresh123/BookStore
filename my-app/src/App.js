@@ -4,9 +4,9 @@ import BookState from "./context/BookState";
 import About from "./pages/About";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import DetailsPage from "./pages/DetailsPage";
 import NoteContext from "./context/NoteContext";
 import { useContext } from "react";
+import DetailsPage from "./pages/DetailsPage";
 
 function App() {
   const context = useContext(NoteContext);
@@ -19,57 +19,88 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/about" element={<About />} />
-              <Route path="/" element={<Home />} />
-              <Route path="/general" element={<Home category="general" />} />
-              <Route
-                path="/frictional"
-                element={<Home category="frictional" />}
-              />
-              <Route path="/novel" element={<Home category="novel" />} />
-              <Route
-                path="/self-improvement"
-                element={<Home category="self-improvement" />}
-              />
-              <Route path="/4" element={<Home rating="4" />} />
-              <Route path="/3" element={<Home rating="3" />} />
-              <Route path="/2" element={<Home rating="2" />} />
-              <Route path="/1" element={<Home rating="1" />} />
-              <Route path="/details" element={<DetailsPage />} />
 
               {books.map((item) => {
                 return (
                   <>
                     <Route
+                      key={item.id}
+                      path="/"
+                      element={
+                        <Home category={item.category} rating={item.rating} />
+                      }
+                    />
+                    <Route
+                      key={item.id}
+                      path={`/${item.name}`}
+                      element={ <DetailsPage img={item.img} title={item.name} rating={item.rating} />}
+                    />
+                    <Route
+                      key={item.id}
+                      path={`/${item.category}`}
+                      element={<Home category={item.category} />}
+                    />
+                    <Route
+                      key={item.id}
+                      path={`/${item.rating}`}
+                      element={<Home rating={item.rating} />}
+                    />
+
+                    <Route
+                      key={item.id}
                       path={`/general/${item.name}`}
-                      element={<DetailsPage title={item.name} />}
+                      element={
+                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                      }
                     />
                     <Route
+                      key={item.id}
                       path={`/frictional/${item.name}`}
-                      element={<DetailsPage title={item.name}/>}
+                      element={
+                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                      }
                     />
                     <Route
+                      key={item.id}
                       path={`/novel/${item.name}`}
-                      element={<DetailsPage title={item.name} />}
+                      element={
+                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                      }
                     />
                     <Route
+                      key={item.id}
                       path={`/self-improvement/${item.name}`}
-                      element={<DetailsPage />}
+                      element={
+                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                      }
                     />
                     <Route
+                      key={item.id}
                       path={`/4/${item.name}`}
-                      element={<DetailsPage title={item.name}/>}
+                      element={
+                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                      }
                     />
                     <Route
+                      key={item.id}
                       path={`/3/${item.name}`}
-                      element={<DetailsPage title={item.name}/>}
+                      element={
+                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                      }
                     />
                     <Route
+                      key={item.id}
                       path={`/2/${item.name}`}
-                      element={<DetailsPage title={item.name}/>}
+                      element={
+                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                      }
                     />
                     <Route
+                      key={item.id}
                       path={`/1/${item.name}`}
-                      element={<DetailsPage title={item.name}/>}
+                      element={
+                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                      }
                     />
                   </>
                 );

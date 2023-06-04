@@ -23,6 +23,7 @@ function CardSection(props) {
           return (
           <Link to={`${element.name}`}>  
           <Card
+              img={element.img}
               name={element.name}
               price={element.price}
               category={element.category}
@@ -37,6 +38,7 @@ function CardSection(props) {
           return (
             <Link to={`${element.name}`}>  
             <Card
+              img={element.img}
               name={element.name}
               price={element.price}
               category={element.category}

@@ -4,7 +4,7 @@ import Rating from './Rating'
 function Card(props) {
   return (
     <div className='card'>
-        <img src='photo.jpg' alt='' />
+        <img src={props.img} alt='' />
         <div className='card-content'>
           
           <div>

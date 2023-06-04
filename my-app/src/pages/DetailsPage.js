@@ -10,7 +10,7 @@ function DetailsPage(props) {
       <Header />
       <div className="detail-section">
         <div className="left-section">
-          <img src="/photo.jpg" alt="Italy" />
+          <img src={`/${props.img}`} alt="Italy" />
           <div className="detail-button">
             <button type="button" style={{ backgroundColor: "#ff9f00" }}>
               Add TO CART
@@ -26,7 +26,7 @@ function DetailsPage(props) {
 
           <div className="rating-and-reviews">
             <div className="rate-sticker" style={{ margin: "0 1rem" }}>
-              <p style={{ marginRight: "3px" }}>4.2</p>
+              <p style={{ marginRight: "3px" }}>{props.rating}.3</p>
               <FontAwesomeIcon icon={faStar} style={{ color: "white" }} />
             </div>
             <p>253 Ratings & 12 Reviews</p>

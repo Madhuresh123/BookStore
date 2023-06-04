@@ -5,6 +5,7 @@ const BookState = (props) => {
   const arr = [
     {
       id: "1",
+      img: "photo1.PNG",
       name: "Eat that frog",
       price: "$5",
       category: "novel",
@@ -12,6 +13,8 @@ const BookState = (props) => {
     },
     {
       id: "2",
+      img: "photo1.PNG",
+
       name: "Think and grow rich",
       price: "$65",
       category: "frictional",
@@ -19,6 +22,8 @@ const BookState = (props) => {
     },
     {
       id: "3",
+      img: "photo1.PNG",
+
       name: "Millioniar Club",
       price: "$5",
       category: "novel",
@@ -26,6 +31,8 @@ const BookState = (props) => {
     },
     {
       id: "4",
+      img: "photo1.PNG",
+
       name: "Eat that frog",
       price: "$50",
       category: "self-improvement",
@@ -33,6 +40,8 @@ const BookState = (props) => {
     },
     {
       id: "5",
+      img: "photo1.PNG",
+
       name: "Eat that frog",
       price: "$5",
       category: "novel",
@@ -40,6 +49,8 @@ const BookState = (props) => {
     },
     {
       id: "6",
+      img: "photo1.PNG",
+
       name: "Eat that frog",
       price: "$5",
       category: "novel",
@@ -47,6 +58,8 @@ const BookState = (props) => {
     },
     {
       id: "7",
+      img: "photo1.PNG",
+
       name: "NEET 2023",
       price: "$5",
       category: "general",
@@ -54,6 +67,8 @@ const BookState = (props) => {
     },
     {
       id: "8",
+      img: "photo1.PNG",
+
       name: "Eat that frog",
       price: "$5",
       category: "novel",
@@ -61,13 +76,17 @@ const BookState = (props) => {
     },
     {
       id: "9",
+      img: "photo1.PNG",
+
       name: "Eat that frog",
       price: "$5",
       category: "novel",
-      rating: "3",
+      rating: "1",
     },
     {
       id: "10",
+      img: "photo2.PNG",
+
       name: "5 a.m club",
       price: "$5",
       category: "self-improvement",
@@ -76,13 +95,13 @@ const BookState = (props) => {
   ];
 
   const [books, setBooks] = useState(arr);
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState("");
 
-
-
-  return <NoteContext.Provider value={{setBooks , books, setCategory, category}}>
-    {props.children}
-    </NoteContext.Provider>;
+  return (
+    <NoteContext.Provider value={{ setBooks, books, setCategory, category }}>
+      {props.children}
+    </NoteContext.Provider>
+  );
 };
 
 export default BookState;
