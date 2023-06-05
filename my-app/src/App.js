@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import NoteContext from "./context/NoteContext";
 import { useContext } from "react";
 import DetailsPage from "./pages/DetailsPage";
+import Cart from "./pages/Cart";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   const context = useContext(NoteContext);
@@ -19,6 +21,8 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/about" element={<About />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/landingpage" element={<LandingPage />} />
 
               {books.map((item) => {
                 return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faCartShopping} from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
   return (
@@ -12,10 +12,13 @@ function Header() {
       <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: 'blue', marginLeft:'-7rem', fontSize:'20px'} } />
       </div>
       <div className='header_right'>
-          <div  className='header_items'><Link>Login</Link></div>
+          <div className='header_items'><Link>Login</Link></div>
           <div className='header_items' ><Link>Become a Seller</Link></div>
           <div className='header_items'><Link>About us</Link></div>
-          <div className='header_items'><Link>Cart</Link></div>
+          <div className='header_items'><FontAwesomeIcon
+                icon={faCartShopping}
+                style={{ color: "white", marginRight: "5px" }}
+              /><Link to='/cart'>Cart</Link></div>
       </div>
 
     </div>

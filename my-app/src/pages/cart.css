@@ -1,0 +1,114 @@
+.cart{
+    display: flex;
+    width: auto;
+    height: 100vh;
+    background-color: whitesmoke;
+}
+
+.cart-left{
+    flex: 6;
+    width: auto;
+    height: 60vh;
+    background-color: whitesmoke;
+    margin: 2rem;
+    margin-left: 5rem;
+    border: 1px solid gainsboro
+}
+
+.cart-right{
+    flex: 4;
+    width: auto;
+    height: 32vh;
+    background-color: white;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 10rem;
+}
+
+.stage{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: auto;
+    height: 4rem;
+    background-color: white;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+}
+
+.stage2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: 4rem;
+    background-color: white;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+}
+
+.stage3{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: 16rem;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.cart-photo{
+    flex: 2;
+    height: 10rem;
+    margin-left: 2rem;
+}
+
+.cart-content{
+    flex: 8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 12rem;
+    margin-left: 3rem;
+}
+
+.stage-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 4rem;
+    border-bottom: 3px solid #2874f0;
+    color: #2874f0;
+}
+
+.stage4{
+    display: flex;
+    align-items: center;
+    justify-content:end;
+    width: auto;
+    height: 4rem;
+    background-color: white;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    border-top: 2px solid gainsboro;
+}
+
+.stage4 > button{
+    width: 13rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+.stage5{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: 3rem;
+    background-color: white;
+    border-radius: 3px;
+}

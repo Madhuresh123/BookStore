@@ -2,7 +2,12 @@ import React from "react";
 import Header from "../component/Header";
 import "./detailsPage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import {
+  faStar,
+  faCartShopping,
+  faBolt,
+  faTag,
+} from "@fortawesome/free-solid-svg-icons";
 
 function DetailsPage(props) {
   return (
@@ -12,10 +17,24 @@ function DetailsPage(props) {
         <div className="left-section">
           <img src={`/${props.img}`} alt="Italy" />
           <div className="detail-button">
-            <button type="button" style={{ backgroundColor: "#ff9f00" }}>
+            <button
+              type="button"
+              style={{ backgroundColor: "#ff9f00", fontWeight: "bold" }}
+            >
+              <FontAwesomeIcon
+                icon={faCartShopping}
+                style={{ color: "white", marginRight: "5px" }}
+              />
               Add TO CART
             </button>
-            <button type="button" style={{ backgroundColor: "#fb641b" }}>
+            <button
+              type="button"
+              style={{ backgroundColor: "#fb641b", fontWeight: "bold" }}
+            >
+              <FontAwesomeIcon
+                icon={faBolt}
+                style={{ color: "white", marginRight: "5px" }}
+              />
               BUY NOW
             </button>
           </div>
@@ -44,19 +63,46 @@ function DetailsPage(props) {
           <div className="offers">
             <h3>Available offers</h3>
             <p>
-              Special PriceGet extra 5% off (price inclusive of
-              cashback/coupon)T&C
+              <FontAwesomeIcon
+                icon={faTag}
+                style={{ color: "green", marginRight: "5px" }}
+              />
+              Special PriceGet extra 5% off (price inclusive of cashback/coupon){" "}
+              <span style={{ color: "#2874f0", fontWeight: "bold" }}>T&C</span>
             </p>
             <p>
+              <FontAwesomeIcon
+                icon={faTag}
+                style={{ color: "green", marginRight: "5px" }}
+              />
               Partner OfferSign up for Flipkart Pay Later and get Flipkart Gift
-              Card worth up to ₹1,000*Know More
+              Card worth up to ₹1,000*{" "}
+              <span style={{ color: "#2874f0", fontWeight: "bold" }}>
+                Know More
+              </span>
             </p>
-            <p>Partner OfferBuy this product and get upto ₹250 Off</p>
             <p>
-              Bank OfferFlat ₹1,250 Off on HDFC Bank Credit Card EMI Trxns on
-              orders priced between ₹15,000 to ₹39,999T&
+              <FontAwesomeIcon
+                icon={faTag}
+                style={{ color: "green", marginRight: "5px" }}
+              />
+              Partner OfferBuy this product and get upto ₹250 Off{" "}
+              <span style={{ color: "#2874f0", fontWeight: "bold" }}>
+                Know More
+              </span>
             </p>
-            <p>View 8 more offers</p>
+            <p>
+              {" "}
+              <FontAwesomeIcon
+                icon={faTag}
+                style={{ color: "green", marginRight: "5px" }}
+              />
+              Bank OfferFlat ₹1,250 Off on HDFC Bank Credit Card EMI Trxns on
+              orders priced between ₹15,000 to ₹39,999 <span style={{ color: "#2874f0", fontWeight: "bold" }}>T&C</span>
+            </p>
+            <span style={{ color: "#2874f0", fontWeight: "bold" }}>
+              View 8 more offers
+            </span>
           </div>
 
           <table className="specifications">

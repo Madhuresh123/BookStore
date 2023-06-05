@@ -7,13 +7,13 @@ function Card(props) {
         <img src={props.img} alt='' />
         <div className='card-content'>
           
-          <div>
-          <h2>{props.name}</h2>
+          <div >
+          <h2 >{props.name}</h2>
             <Rating rating={props.rating} />
           </div>
 
             <div>
-            <p>{props.price}</p>
+            <p >{props.price}</p>
             <p>{props.category}</p>
             </div>
 
