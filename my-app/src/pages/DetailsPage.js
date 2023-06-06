@@ -23,6 +23,8 @@ function DetailsPage(props) {
       id: new Date().getTime().toString(),
       img: props.img,
       title: props.title,
+      category: props.category,
+      price: props.price,
       rating: props.rating
     } 
     setCartList([...cartList,list])
@@ -81,8 +83,8 @@ function DetailsPage(props) {
           <div className="price">
             <h2>Special price</h2>
             <div className="cost">
-              <p style={{ fontSize: "24px" }}>$303</p>
-              <p style={{ textDecoration: "line-through" }}>$503</p>
+              <p style={{ fontSize: "24px" }}>₹{props.price}</p>
+              <p style={{ textDecoration: "line-through" }}>₹503</p>
               <p style={{ color: "green", fontWeight: "bold" }}>74% off</p>
             </div>
           </div>

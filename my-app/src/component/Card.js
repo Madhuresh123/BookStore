@@ -13,7 +13,7 @@ function Card(props) {
           </div>
 
             <div>
-            <p >{props.price}</p>
+            <p >₹{props.price}</p>
             <p>{props.category}</p>
             </div>
 

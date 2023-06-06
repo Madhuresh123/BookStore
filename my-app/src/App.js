@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <NoteState>
-      <BookState>
+        <BookState>
           <BrowserRouter>
             <Routes>
               <Route path="/about" element={<About />} />
@@ -34,10 +34,19 @@ function App() {
                         <Home category={item.category} rating={item.rating} />
                       }
                     />
+
                     <Route
                       key={item.id}
                       path={`/${item.name}`}
-                      element={ <DetailsPage img={item.img} title={item.name} rating={item.rating} />}
+                      element={
+                        <DetailsPage
+                          img={item.img}
+                          title={item.name}
+                          rating={item.rating}
+                          price={item.price}
+                          category={item.category}
+                        />
+                      }
                     />
                     <Route
                       key={item.id}
@@ -54,56 +63,104 @@ function App() {
                       key={item.id}
                       path={`/general/${item.name}`}
                       element={
-                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                        <DetailsPage
+                          img={item.img}
+                          title={item.name}
+                          rating={item.rating}
+                          price={item.price}
+                          category={item.category}
+                        />
                       }
                     />
                     <Route
                       key={item.id}
                       path={`/frictional/${item.name}`}
                       element={
-                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                        <DetailsPage
+                          img={item.img}
+                          title={item.name}
+                          rating={item.rating}
+                          price={item.price}
+                          category={item.category}
+                        />
                       }
                     />
                     <Route
                       key={item.id}
                       path={`/novel/${item.name}`}
                       element={
-                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                        <DetailsPage
+                          img={item.img}
+                          title={item.name}
+                          rating={item.rating}
+                          price={item.price}
+                          category={item.category}
+                        />
                       }
                     />
                     <Route
                       key={item.id}
                       path={`/self-improvement/${item.name}`}
                       element={
-                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                        <DetailsPage
+                          img={item.img}
+                          title={item.name}
+                          rating={item.rating}
+                          price={item.price}
+                          category={item.category}
+                        />
                       }
                     />
                     <Route
                       key={item.id}
                       path={`/4/${item.name}`}
                       element={
-                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                        <DetailsPage
+                          img={item.img}
+                          title={item.name}
+                          rating={item.rating}
+                          price={item.price}
+                          category={item.category}
+                        />
                       }
                     />
                     <Route
                       key={item.id}
                       path={`/3/${item.name}`}
                       element={
-                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                        <DetailsPage
+                          img={item.img}
+                          title={item.name}
+                          rating={item.rating}
+                          price={item.price}
+                          category={item.category}
+                        />
                       }
                     />
                     <Route
                       key={item.id}
                       path={`/2/${item.name}`}
                       element={
-                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                        <DetailsPage
+                          img={item.img}
+                          title={item.name}
+                          rating={item.rating}
+                          price={item.price}
+                          category={item.category}
+                        />
                       }
                     />
                     <Route
                       key={item.id}
                       path={`/1/${item.name}`}
                       element={
-                        <DetailsPage img={item.img} title={item.name} rating={item.rating} />
+                        <DetailsPage
+                          img={item.img}
+                          title={item.name}
+                          rating={item.rating}
+                          price={item.price}
+                          category={item.category}
+                        />
                       }
                     />
                   </>
@@ -111,7 +168,7 @@ function App() {
               })}
             </Routes>
           </BrowserRouter>
-          </BookState>
+        </BookState>
       </NoteState>
     </>
   );

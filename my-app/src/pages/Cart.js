@@ -4,7 +4,6 @@ import "./cart.css";
 import Rating from "../component/Rating";
 import NoteContext from "../context/NoteContext";
 
-
 function Cart() {
 
   const context = useContext(NoteContext);
@@ -14,6 +13,11 @@ function Cart() {
     const removeItem = cartList.filter((element) => element.id !==  id )
     setCartList(removeItem)
   }
+
+
+  const totalPrice = cartList.reduce((sum, element) => {
+    return sum + element.price;
+  }, 0);
 
   return (
     <>
@@ -43,10 +47,10 @@ function Cart() {
               <div>
                 <h2>{element.title}</h2>
                 <Rating rating={element.rating} />
-                <p>Category: General</p>
+                <p>Category: {element.category}</p>
                 <div className="cost" style={{ marginTop: "1rem" }}>
-                  <p style={{ fontSize: "24px" }}>$303</p>
-                  <p style={{ textDecoration: "line-through" }}>$503</p>
+                  <p style={{ fontSize: "24px" }}>₹{element.price}</p>
+                  <p style={{ textDecoration: "line-through" }}>₹103</p>
                   <p style={{ color: "green", fontWeight: "bold" }}>74% off</p>
                 </div>
               </div>
@@ -94,31 +98,37 @@ function Cart() {
           </div>
         </div>
         <div className="cart-right">
-        <div className="stage5 " style={{borderBottom: '3px solid whitesmoke'}}>
+        <div className="stage5 " style={{borderBottom: '3px solid whitesmoke', fontSize: '18px', color:'gray', fontWeight: '500'}}>
             <div style={{ marginLeft: "1rem" } }>PRICE DETAILS</div>
             <div style={{ marginRight: "1rem" }}></div>
           </div>
 
-          <div className="stage5">
+          <div className="stage5" style={{fontSize: '16px'}}>
             <div style={{ marginLeft: "1rem" }}>Price ({cartList.length} item)</div>
-            <div style={{ marginRight: "1rem" }}>999</div>
+            <div style={{ marginRight: "1rem" }}>₹{totalPrice}</div>
           </div>
 
-          <div className="stage5">
-            <div style={{ marginLeft: "1rem" }}>Discount</div>
-            <div style={{ marginRight: "1rem" }}>-500</div>
+          <div className="stage5" style={{fontSize: '16px'}}>
+            <div style={{ marginLeft: "1rem" }}>Discount 90%</div>
+            <div style={{ marginRight: "1rem" , color:'green'}}>-₹{(totalPrice*90)/100}</div>
           </div>
 
-          <div className="stage5">
+          <div className="stage5" style={{fontSize: '16px'}}>
             <div style={{ marginLeft: "1rem" }}>Delivery Charges</div>
-            <div style={{ marginRight: "1rem" }}>Free</div>
+            <div style={{ marginRight: "1rem", color:'green' }}>Free</div>
           </div>
 
-          <div className="stage5" style={{borderTop: '3px solid whitesmoke'}}>
+          <div className="stage5" style={{borderTop: '3px solid whitesmoke', fontSize: '18px'}}>
             <div style={{ marginLeft: "1rem", fontWeight:'bold' }}>Total Amount</div>
-            <div style={{ marginRight: "1rem" }}>499</div>
+            <div style={{ marginRight: "1rem", fontWeight:'bold' }}>₹{totalPrice-(totalPrice*90)/100}</div>
           </div>
 
+          <div className="stage5" style={{borderTop: '3px solid whitesmoke', fontSize: '16px'}}>
+            <div style={{ marginLeft: "1rem", color: 'green', fontWeight: '500'  }}>You will save ₹{(totalPrice*90)/100} on this order</div>
+          </div>
+          <div style={{borderBottom: '3px solid whitesmoke', fontSize: '14px', color:'gray', fontWeight: '500', textAlign:'center', padding: '3rem'}}>
+            <p>Safe and Secure Payments.Easy returns.100% Authentic products.</p>
+            </div>
         </div>
       </div>
       </div>

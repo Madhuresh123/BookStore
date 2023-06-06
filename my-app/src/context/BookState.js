@@ -7,7 +7,7 @@ const BookState = (props) => {
       id: "1",
       img: "photo1.PNG",
       name: "Eat that frog",
-      price: "$5",
+      price: 50,
       category: "novel",
       rating: "3",
     },
@@ -16,7 +16,7 @@ const BookState = (props) => {
       img: "photo1.PNG",
 
       name: "Think and grow rich",
-      price: "$65",
+      price: 65,
       category: "frictional",
       rating: "5",
     },
@@ -25,7 +25,7 @@ const BookState = (props) => {
       img: "photo1.PNG",
 
       name: "Millioniar Club",
-      price: "$5",
+      price: 50,
       category: "novel",
       rating: "2",
     },
@@ -34,7 +34,7 @@ const BookState = (props) => {
       img: "photo1.PNG",
 
       name: "Eat that frog",
-      price: "$50",
+      price: 50,
       category: "self-improvement",
       rating: "4",
     },
@@ -43,7 +43,7 @@ const BookState = (props) => {
       img: "photo1.PNG",
 
       name: "Eat that frog",
-      price: "$5",
+      price: 50,
       category: "novel",
       rating: "3",
     },
@@ -52,7 +52,7 @@ const BookState = (props) => {
       img: "photo1.PNG",
 
       name: "Eat that frog",
-      price: "$5",
+      price: 50,
       category: "novel",
       rating: "3",
     },
@@ -61,7 +61,7 @@ const BookState = (props) => {
       img: "photo1.PNG",
 
       name: "NEET 2023",
-      price: "$5",
+      price: 50,
       category: "general",
       rating: "3",
     },
@@ -70,7 +70,7 @@ const BookState = (props) => {
       img: "photo1.PNG",
 
       name: "Eat that frog",
-      price: "$5",
+      price: 50,
       category: "novel",
       rating: "3",
     },
@@ -79,7 +79,7 @@ const BookState = (props) => {
       img: "photo1.PNG",
 
       name: "Eat that frog",
-      price: "$5",
+      price: 50,
       category: "novel",
       rating: "1",
     },
@@ -88,7 +88,7 @@ const BookState = (props) => {
       img: "photo2.PNG",
 
       name: "5 a.m club",
-      price: "$5",
+      price: 50,
       category: "self-improvement",
       rating: "3",
     },
