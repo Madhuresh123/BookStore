@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "../component/Header";
 import "./detailsPage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,18 +8,40 @@ import {
   faBolt,
   faTag,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import NoteContext from "../context/NoteContext";
+
 
 function DetailsPage(props) {
+
+  const context = useContext(NoteContext);
+  const { cartList, setCartList } = context;
+
+  const handleAddToCart =()=>{
+    
+    const list = {
+      id: new Date().getTime().toString(),
+      img: props.img,
+      title: props.title,
+      rating: props.rating
+    } 
+    setCartList([...cartList,list])
+    console.log(cartList)
+  }
+
   return (
     <>
       <Header />
+      <form>
       <div className="detail-section">
         <div className="left-section">
           <img src={`/${props.img}`} alt="Italy" />
           <div className="detail-button">
-            <button
+
+            <Link><button
               type="button"
               style={{ backgroundColor: "#ff9f00", fontWeight: "bold" }}
+              onClick={handleAddToCart}
             >
               <FontAwesomeIcon
                 icon={faCartShopping}
@@ -27,6 +49,9 @@ function DetailsPage(props) {
               />
               Add TO CART
             </button>
+            </Link>
+
+            <Link to='/cart'>
             <button
               type="button"
               style={{ backgroundColor: "#fb641b", fontWeight: "bold" }}
@@ -37,6 +62,8 @@ function DetailsPage(props) {
               />
               BUY NOW
             </button>
+            </Link>
+
           </div>
         </div>
 
@@ -48,7 +75,7 @@ function DetailsPage(props) {
               <p style={{ marginRight: "3px" }}>{props.rating}.3</p>
               <FontAwesomeIcon icon={faStar} style={{ color: "white" }} />
             </div>
-            <p>253 Ratings & 12 Reviews</p>
+            <div><p>253 Ratings & 12 Reviews</p></div>
           </div>
 
           <div className="price">
@@ -152,6 +179,7 @@ function DetailsPage(props) {
           </table>
         </div>
       </div>
+      </form>
     </>
   );
 }

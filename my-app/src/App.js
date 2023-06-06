@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <NoteState>
-        <BookState>
+      <BookState>
           <BrowserRouter>
             <Routes>
               <Route path="/about" element={<About />} />
@@ -111,7 +111,7 @@ function App() {
               })}
             </Routes>
           </BrowserRouter>
-        </BookState>
+          </BookState>
       </NoteState>
     </>
   );

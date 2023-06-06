@@ -61,7 +61,7 @@
   text-decoration: none;
 }
 
-.card{
+.card1{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -79,13 +79,13 @@
   color: black;
 }
 
-.card:hover{
+.card1:hover{
   box-shadow: 8px 8px 16px 8px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  } 
 
-.card> img{
+.card1 > img{
   margin: 10px 0;
-  width: 15rem;
+  width: 14rem;
   height: 30vh;
 }
 
@@ -130,4 +130,18 @@ div.filter-section {
 
 .checkbox-label:hover{
   color: rgb(110, 110, 110);
+}
+
+.itemCount{
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: red;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+  left: 5rem;
+  bottom: 0.7rem;
 }

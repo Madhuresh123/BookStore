@@ -28,7 +28,7 @@
     flex: 6;
 }
 
-.detail-button > button {
+.detail-button > a > button {
     width: 15rem;
     height: 3rem;
     margin: 2rem 0.5rem;

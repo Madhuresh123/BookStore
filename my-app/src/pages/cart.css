@@ -1,8 +1,14 @@
+.cart-section{
+    display: flex;
+  flex-direction: column;
+  width: auto;
+  height: 100vh; /* Set the height of the container to fill the viewport */
+  background-color: whitesmoke;
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+}
 .cart{
     display: flex;
     width: auto;
-    height: 100vh;
-    background-color: whitesmoke;
 }
 
 .cart-left{
@@ -85,7 +91,7 @@
 .stage4{
     display: flex;
     align-items: center;
-    justify-content:end;
+    justify-content:flex-end;
     width: auto;
     height: 4rem;
     background-color: white;

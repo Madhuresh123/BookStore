@@ -1,33 +1,48 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "../component/Header";
 import "./cart.css";
 import Rating from "../component/Rating";
+import NoteContext from "../context/NoteContext";
+
 
 function Cart() {
+
+  const context = useContext(NoteContext);
+  const { cartList, setCartList } = context;
+
+  const handleRemove = (id) => {
+    const removeItem = cartList.filter((element) => element.id !==  id )
+    setCartList(removeItem)
+  }
+
   return (
-    <div>
+    <>
       <Header />
+      <div className="cart-section"> 
       <div className="cart">
         <div className="cart-left">
           <div className="stage">
-            <div className="stage-title">Books(1)</div>
-            <div className="stage-title">Order(1)</div>
+            <div className="stage-title">Books({cartList.length})</div>
+            <div className="stage-title">Order({cartList.length})</div>
           </div>
 
           <div className="stage2">
             <div style={{ marginLeft: "1rem" }}>From save email address</div>
-            <div style={{ marginRight: "1rem" }}>Order(1)</div>
+            <div style={{ marginRight: "1rem" }}>Order({cartList.length})</div>
           </div>
 
-          <div className="stage3">
+
+          {cartList.map((element) => {
+            return (
+            <div className="stage3" key={element.id}>
             <div>
-              <img className="cart-photo" src="photo1.PNG" alt="" />
+              <img className="cart-photo" src={element.img} alt="" />
             </div>
 
             <div className="cart-content">
               <div>
-                <h2>Eat That Frog</h2>
-                <Rating rating={4} />
+                <h2>{element.title}</h2>
+                <Rating rating={element.rating} />
                 <p>Category: General</p>
                 <div className="cost" style={{ marginTop: "1rem" }}>
                   <p style={{ fontSize: "24px" }}>$303</p>
@@ -53,12 +68,16 @@ function Cart() {
                     marginRight: "3rem",
                     cursor: "pointer",
                   }}
+                  onClick={() => handleRemove(element.id)}
                 >
                   REMOVE
                 </span>{" "}
               </div>
             </div>
           </div>
+            )
+          })}
+          
 
           <div className="stage4">
             <button
@@ -68,6 +87,7 @@ function Cart() {
                 fontWeight: "bold",
                 marginRight: "2rem",
               }}
+      
             >
               PLACE ORDER
             </button>
@@ -80,7 +100,7 @@ function Cart() {
           </div>
 
           <div className="stage5">
-            <div style={{ marginLeft: "1rem" }}>Price (1 item)</div>
+            <div style={{ marginLeft: "1rem" }}>Price ({cartList.length} item)</div>
             <div style={{ marginRight: "1rem" }}>999</div>
           </div>
 
@@ -96,12 +116,13 @@ function Cart() {
 
           <div className="stage5" style={{borderTop: '3px solid whitesmoke'}}>
             <div style={{ marginLeft: "1rem", fontWeight:'bold' }}>Total Amount</div>
-            <div style={{ marginRight: "1rem" }}></div>
+            <div style={{ marginRight: "1rem" }}>499</div>
           </div>
 
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

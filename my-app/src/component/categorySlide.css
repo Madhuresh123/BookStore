@@ -1,0 +1,40 @@
+.categorySlide{
+    display: flex;
+    width:auto;
+    height: 50vh;
+    background-color: white;
+    margin-top: 1rem;
+}
+
+.categorySlide_left{
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-right: 2px solid whitesmoke ;
+}
+
+.categorySlide_left> div{
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 0 2rem;
+}
+
+.categorySlide_left > a>  button {
+    background-color: #2874f0;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    width: 5rem;
+    height: 2rem;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.categorySlide_right{
+    flex: 8;
+    display: flex;
+}
