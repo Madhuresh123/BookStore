@@ -57,6 +57,7 @@ function DetailsPage(props) {
             <button
               type="button"
               style={{ backgroundColor: "#fb641b", fontWeight: "bold" }}
+              onClick={handleAddToCart}
             >
               <FontAwesomeIcon
                 icon={faBolt}

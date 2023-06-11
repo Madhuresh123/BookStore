@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import './priceFilter.css';
+import NoteContext from "../context/NoteContext";
+
 
 function PriceFilter() {
-  const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(100);
-
-  const handleMinPriceChange = (event) => {
-    setMinPrice(Number(event.target.value));
-  };
+  const context = useContext(NoteContext);
+  const { maxPrice, setMaxPrice } = context;
 
   const handleMaxPriceChange = (event) => {
     setMaxPrice(Number(event.target.value));
@@ -18,20 +16,9 @@ function PriceFilter() {
       <div className="price-header">
         <span className="price-title">Price Range</span>
       </div>
+
       <div className="price-controls">
-        <label className="price-label">Min Price:</label>
-        <input
-          type="range"
-          min="0"
-          max="100"
-          value={minPrice}
-          onChange={handleMinPriceChange}
-          className="price-slider"
-        />
-        <span className="price-value">${minPrice}</span>
-      </div>
-      <div className="price-controls">
-        <label className="price-label">Max Price:</label>
+        <label className="price-label">Price:</label>
         <input
           type="range"
           min="0"
@@ -40,8 +27,9 @@ function PriceFilter() {
           onChange={handleMaxPriceChange}
           className="price-slider"
         />
-        <span className="price-value">${maxPrice}</span>
+        <span className="price-value">₹{maxPrice}</span>
       </div>
+
     </div>
   );
 }

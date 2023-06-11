@@ -70,7 +70,7 @@ const BookState = (props) => {
       img: "photo1.PNG",
 
       name: "Eat that frog",
-      price: 50,
+      price: 20,
       category: "novel",
       rating: "3",
     },
@@ -97,9 +97,10 @@ const BookState = (props) => {
   const [books, setBooks] = useState(arr);
   const [cartList, setCartList] = useState([]);
   const [category, setCategory] = useState("");
+  const [maxPrice, setMaxPrice] = useState(100);
 
   return (
-    <NoteContext.Provider value={{ setBooks, books, setCategory, category, cartList, setCartList }}>
+    <NoteContext.Provider value={{ setBooks, books, setCategory, category, cartList, setCartList, maxPrice, setMaxPrice }}>
       {props.children}
     </NoteContext.Provider>
   );

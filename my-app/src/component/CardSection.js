@@ -14,15 +14,20 @@ function CardSection(props) {
     return element.rating === props.rating;
   });
 
+  const filtedPricing = books.filter((element) => {
+    return (element.price <= props.pricing);
+  });
+
+
   return (
     <>
-
     <div className="card-section">
-      {props.category &&
+      { props.category  && 
         filtedCaterogy.map((element) => {
           return (
           <Link to={`${element.name}`}>  
           <Card
+                key={element.id}
               img={element.img}
               name={element.name}
               price={element.price}
@@ -38,6 +43,7 @@ function CardSection(props) {
           return (
             <Link to={`${element.name}`}>  
             <Card
+              key={element.id}
               img={element.img}
               name={element.name}
               price={element.price}
@@ -48,6 +54,24 @@ function CardSection(props) {
 
           );
         })}
+
+        { props.pricing &&
+        filtedPricing.map((element) => {
+          return (
+            <Link to={`${element.name}`}>  
+            <Card
+              key={element.id}
+              img={element.img}
+              name={element.name}
+              price={element.price}
+              category={element.category}
+              rating={element.rating}
+            />
+            </Link>
+          );
+        })}
+
+
     </div>
     </>
   );
