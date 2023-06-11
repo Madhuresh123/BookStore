@@ -1,3 +1,15 @@
+
+
+.cart-view{
+    opacity: 0.4;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
 .cart-section{
     display: flex;
   flex-direction: column;
@@ -101,7 +113,7 @@
     border-top: 2px solid gainsboro;
 }
 
-.stage4 > button{
+.stage4 > a >  button{
     width: 13rem;
     height: 2.5rem;
     border: none;

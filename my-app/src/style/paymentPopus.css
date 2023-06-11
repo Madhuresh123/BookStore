@@ -1,0 +1,42 @@
+.popoup{
+    z-index: 2;
+    position: relative;
+    left: 40rem;
+    top: 15rem;
+    width: 14.4rem;
+    height: 20rem;
+    border-radius: 5px;
+    border: 2px solid rgb(177, 176, 176);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+}
+
+.popoup > img {
+    position: relative;
+    top: -1.4rem;
+
+}
+
+.popoup > p{
+    position: relative;
+    top: -1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.close{
+    position: relative;
+    left:13rem;
+    z-index: 1;
+    color: white;
+}
+
+
+@media only screen and (max-width: 1200px) {
+   
+    .popoup{
+        left: 10rem;
+    
+    }
+      
+  }

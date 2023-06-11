@@ -3,8 +3,10 @@ import Header from "../component/Header";
 import "./cart.css";
 import Rating from "../component/Rating";
 import NoteContext from "../context/NoteContext";
+import PaymentPopus from "../component/PaymentPopus";
+import { Link } from "react-router-dom";
 
-function Cart() {
+function Cart(props) {
 
   const context = useContext(NoteContext);
   const { cartList, setCartList } = context;
@@ -13,14 +15,13 @@ function Cart() {
     const removeItem = cartList.filter((element) => element.id !==  id )
     setCartList(removeItem)
   }
-
-
   const totalPrice = cartList.reduce((sum, element) => {
     return sum + element.price;
   }, 0);
 
   return (
     <>
+    <div className={props.box}>
       <Header />
       <div className="cart-section"> 
       <div className="cart">
@@ -82,8 +83,8 @@ function Cart() {
             )
           })}
           
-
           <div className="stage4">
+            <Link to='/payment'>
             <button
               type="button"
               style={{
@@ -95,6 +96,8 @@ function Cart() {
             >
               PLACE ORDER
             </button>
+            </Link>
+
           </div>
         </div>
         <div className="cart-right">
@@ -132,7 +135,10 @@ function Cart() {
         </div>
       </div>
       </div>
-    </>
+    </div>
+       {props.box && <PaymentPopus amount={totalPrice-(totalPrice*90)/100}/>} 
+        </>
+
   );
 }
 

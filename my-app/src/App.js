@@ -22,6 +22,7 @@ function App() {
             <Routes>
               <Route path="/about" element={<About />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/payment" element={<Cart box='cart-view' />} />
               <Route path="/landingpage" element={<LandingPage />} />
 
               {books.map((item) => {

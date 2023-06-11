@@ -99,6 +99,7 @@ const BookState = (props) => {
   const [category, setCategory] = useState("");
   const [maxPrice, setMaxPrice] = useState(100);
 
+
   return (
     <NoteContext.Provider value={{ setBooks, books, setCategory, category, cartList, setCartList, maxPrice, setMaxPrice }}>
       {props.children}
