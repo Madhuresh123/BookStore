@@ -5,7 +5,7 @@ import About from "./pages/About";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import NoteContext from "./context/NoteContext";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import DetailsPage from "./pages/DetailsPage";
 import Cart from "./pages/Cart";
 import LandingPage from "./pages/LandingPage";
@@ -27,12 +27,12 @@ function App() {
 
               {books.map((item) => {
                 return (
-                  <>
+                  <React.Fragment key={item.id}>
                     <Route
-                      key={item.id}
+                    key={item.id}
                       path="/"
                       element={
-                        <Home category={item.category} rating={item.rating} />
+                        <Home key={item.id} price={item.price}/>
                       }
                     />
 
@@ -41,6 +41,7 @@ function App() {
                       path={`/${item.name}`}
                       element={
                         <DetailsPage
+                        key={item.id}
                           img={item.img}
                           title={item.name}
                           rating={item.rating}
@@ -52,12 +53,12 @@ function App() {
                     <Route
                       key={item.id}
                       path={`/${item.category}`}
-                      element={<Home category={item.category} />}
+                      element={<Home key={item.id} category={item.category} />}
                     />
                     <Route
                       key={item.id}
                       path={`/${item.rating}`}
-                      element={<Home rating={item.rating} />}
+                      element={<Home key={item.id} rating={item.rating} />}
                     />
 
                     <Route
@@ -65,6 +66,7 @@ function App() {
                       path={`/general/${item.name}`}
                       element={
                         <DetailsPage
+                        key={item.id}
                           img={item.img}
                           title={item.name}
                           rating={item.rating}
@@ -78,6 +80,7 @@ function App() {
                       path={`/frictional/${item.name}`}
                       element={
                         <DetailsPage
+                        key={item.id}
                           img={item.img}
                           title={item.name}
                           rating={item.rating}
@@ -91,6 +94,7 @@ function App() {
                       path={`/novel/${item.name}`}
                       element={
                         <DetailsPage
+                        key={item.id}
                           img={item.img}
                           title={item.name}
                           rating={item.rating}
@@ -104,6 +108,7 @@ function App() {
                       path={`/self-improvement/${item.name}`}
                       element={
                         <DetailsPage
+                        key={item.id}
                           img={item.img}
                           title={item.name}
                           rating={item.rating}
@@ -117,6 +122,7 @@ function App() {
                       path={`/4/${item.name}`}
                       element={
                         <DetailsPage
+                        key={item.id}
                           img={item.img}
                           title={item.name}
                           rating={item.rating}
@@ -130,6 +136,7 @@ function App() {
                       path={`/3/${item.name}`}
                       element={
                         <DetailsPage
+                        key={item.id}
                           img={item.img}
                           title={item.name}
                           rating={item.rating}
@@ -143,6 +150,7 @@ function App() {
                       path={`/2/${item.name}`}
                       element={
                         <DetailsPage
+                        key={item.id}
                           img={item.img}
                           title={item.name}
                           rating={item.rating}
@@ -156,6 +164,7 @@ function App() {
                       path={`/1/${item.name}`}
                       element={
                         <DetailsPage
+                        key={item.id} 
                           img={item.img}
                           title={item.name}
                           rating={item.rating}
@@ -164,7 +173,7 @@ function App() {
                         />
                       }
                     />
-                  </>
+                  </React.Fragment>
                 );
               })}
             </Routes>
