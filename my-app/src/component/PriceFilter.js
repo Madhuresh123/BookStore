@@ -19,6 +19,7 @@ function PriceFilter() {
 
       <div className="price-controls">
         <label className="price-label">Price:</label>
+       
         <input
           type="range"
           min="0"

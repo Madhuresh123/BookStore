@@ -28,12 +28,28 @@ function App() {
               {books.map((item) => {
                 return (
                   <React.Fragment key={item.id}>
+
+                    {/* filter home */}
                     <Route
                     key={item.id}
                       path="/"
                       element={
                         <Home key={item.id} price={item.price}/>
                       }
+                    />
+
+                    {/* category filter */}
+                    <Route
+                      key={item.id}
+                      path={`/${item.category}`}
+                      element={<Home key={item.id} category={item.category} />}
+                    />
+
+                     {/* rating filter */}
+                    <Route
+                      key={item.id}
+                      path={`/${item.rating}`}
+                      element={<Home key={item.id} rating={item.rating} />}
                     />
 
                     <Route
@@ -50,16 +66,7 @@ function App() {
                         />
                       }
                     />
-                    <Route
-                      key={item.id}
-                      path={`/${item.category}`}
-                      element={<Home key={item.id} category={item.category} />}
-                    />
-                    <Route
-                      key={item.id}
-                      path={`/${item.rating}`}
-                      element={<Home key={item.id} rating={item.rating} />}
-                    />
+                    
 
                     <Route
                       key={item.id}

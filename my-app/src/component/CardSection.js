@@ -6,7 +6,7 @@ import { Link} from "react-router-dom";
 
 function CardSection(props) {
   const context = useContext(NoteContext);
-  const { books } = context;
+  const { books, maxPrice } = context;
 
   const filteredCategory = books.filter((element) => {
     return element.category === props.category;
@@ -16,6 +16,10 @@ function CardSection(props) {
     return element.rating === props.rating;
   });
 
+  const filteredPrice = books.filter((element) => {
+    return element.price <= maxPrice;
+  });
+
 
   return (
     <>
@@ -23,7 +27,7 @@ function CardSection(props) {
       <div className="card-section">
 
       {props.price &&
-          books.map((element, index) => (
+          filteredPrice.map((element, index) => (
             <Link key={`${element.id}-${index}`} to={`${element.name}`}>
               <Card
                 key={`${element.id}-${index}`}
