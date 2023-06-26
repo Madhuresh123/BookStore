@@ -3,12 +3,16 @@ import NoteState from "./context/NoteState";
 import BookState from "./context/BookState";
 import About from "./pages/About";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
 import NoteContext from "./context/NoteContext";
 import React, { useContext } from "react";
 import DetailsPage from "./pages/DetailsPage";
 import Cart from "./pages/Cart";
 import LandingPage from "./pages/LandingPage";
+import RegisterPage from "./pages/RegisterPage";
+import LoginPage from "./pages/LoginPage";
+import CardSection from "./component/CardSection";
+import Filter from "./component/Filter";
+import Header from "./component/Header";
 
 function App() {
   const context = useContext(NoteContext);
@@ -24,6 +28,10 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/payment" element={<Cart box='cart-view' />} />
               <Route path="/landingpage" element={<LandingPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/login" element={<LoginPage />} />
+
+
 
               {books.map((item) => {
                 return (
@@ -34,7 +42,13 @@ function App() {
                     key={item.id}
                       path="/"
                       element={
-                        <Home key={item.id} price={item.price}/>
+                        <>
+                        <Header/>
+                        <div style={{display: 'flex'}}>
+                        <Filter/>
+                        <CardSection key={item.id} price={item.price}/>
+                        </div>
+                        </>
                       }
                     />
 
@@ -42,14 +56,31 @@ function App() {
                     <Route
                       key={item.id}
                       path={`/${item.category}`}
-                      element={<Home key={item.id} category={item.category} />}
+                      element={
+                        <>
+                        <Header/>
+                        <div style={{display: 'flex'}}>
+                        <Filter/>
+                        <CardSection key={item.id} category={item.category}/>
+                        </div>
+                        </>
+                    }
                     />
 
                      {/* rating filter */}
                     <Route
                       key={item.id}
                       path={`/${item.rating}`}
-                      element={<Home key={item.id} rating={item.rating} />}
+                      element={
+                        <>
+                        <Header/>
+                        <div style={{display: 'flex'}}>
+                        <Filter/>
+                        <CardSection key={item.id} rating={item.rating}/>
+                        </div>
+                        </>
+                      
+                      }
                     />
 
                     <Route

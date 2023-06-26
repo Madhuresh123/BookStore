@@ -1,6 +1,7 @@
 const connectDB = require('./db')
 const express = require('express')
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 
 connectDB();
@@ -12,6 +13,9 @@ const port = 5000
 app.use(express.json())
 
 app.use(cors());
+
+app.use(cookieParser())
+
 
 
 //Available routes
