@@ -94,11 +94,12 @@ const BookState = (props) => {
     },
   ];
 
+
   const [books, setBooks] = useState(arr);
   const [cartList, setCartList] = useState([]);
   const [category, setCategory] = useState("");
   const [maxPrice, setMaxPrice] = useState(100);
-  const [userInfo,setUserInfo] = useState({});
+  const [userInfo,setUserInfo] = useState([]);
 
 
 

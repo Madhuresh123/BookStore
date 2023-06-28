@@ -9,6 +9,8 @@ import DetailsPage from "./pages/DetailsPage";
 import Cart from "./pages/Cart";
 import LandingPage from "./pages/LandingPage";
 import RegisterPage from "./pages/RegisterPage";
+import Store from "./pages/Store";
+
 import LoginPage from "./pages/LoginPage";
 import CardSection from "./component/CardSection";
 import Filter from "./component/Filter";
@@ -24,6 +26,7 @@ function App() {
         <BookState>
           <BrowserRouter>
             <Routes>
+              <Route path="/store" element={<Store />}  />
               <Route path="/about" element={<About />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/payment" element={<Cart box='cart-view' />} />
@@ -37,7 +40,7 @@ function App() {
                 return (
                   <React.Fragment key={item.id}>
 
-                    {/* filter home */}
+                    {/* filter xe */}
                     <Route
                     key={item.id}
                       path="/"
